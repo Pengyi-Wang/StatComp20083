@@ -1,0 +1,16 @@
+Package: StatComp20083
+Type: Package
+Title: First assignment attempt
+Version: 1.0
+Date: 2020-12-08
+Author: Pengyi Wang
+Maintainer: Pengyi Wang <767443429@qq.com>
+Description: This is the first R package I made
+License: GPL (>= 2)
+Imports: Rcpp (>= 0.12.16), microbenchmark, knitr, rmarkdown
+LinkingTo: Rcpp
+RoxygenNote: 7.1.1
+Encoding: UTF-8
+VignetteBuilder: knitr
+URL:https://github.com/Pengyi-Wang/StatComp20083
+BugReports:https://github.com/Pengyi-Wang/StatComp20083/issues
