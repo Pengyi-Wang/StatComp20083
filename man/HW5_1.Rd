@@ -4,7 +4,10 @@
 \alias{HW5_1}
 \title{the question 1 of homework}
 \usage{
-HW5_1()
+HW5_1(law)
+}
+\arguments{
+\item{law}{a data frame (use bootstrap law)}
 }
 \value{
 two number about bias.jack and se.jack
@@ -14,6 +17,6 @@ the question 1 of homework
 }
 \examples{
 \dontrun{
-HW5_1()
+HW5_1(law)
 }
 }

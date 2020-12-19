@@ -1,0 +1,33 @@
+CV=function(X,Y)
+{
+	n=nrow(X)
+	d=function(x1,x2)
+	{
+		x3=x1-x2
+		fff=function(x){(x3[1]+x3[2]*x+x3[3]*x^2+x3[4]*x^3+x3[5]*x^4)^2}      #????+x3[3]*x^2+x3[4]*x^3+x3[5]*x^4
+		return(sqrt(as.numeric(integrate(fff,0,1)[1])))
+	}
+	mNW=function(x,h,y,x1)
+	{
+		n1=nrow(x)
+		f1=0
+		f2=0
+		for(i in 1:n1){f1=f1+Kernel(d(x1,x[i,])/h)*y[i]/Gn(y[i])}
+		for(i in 1:n1){f2=f2+Kernel(d(x1,x[i,])/h)/Gn(y[i])}
+		return(f1/f2)
+	}
+	# h1=seq(0.1,5,0.1)
+	CVH=function(x,h,y)
+	{
+	f3=0
+		n2=nrow(x)
+		for(i in 1:n2){f3=f3+(y[i]-mNW(x[-i,],h,y[-i],x[i,]))^2}
+		return(f3)
+	}
+	y=rep(1,length(h1))
+	for(j in 1:length(h1)){y[j]=CVH(X,h1[j],Y)}	
+	plot(h1,y,xlab="h",ylab="CV(h)")
+	place=which(y==min(y))
+	h=h1[place]
+	return(h)
+}

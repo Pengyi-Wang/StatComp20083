@@ -9,5 +9,11 @@ The functions used in homework 7
 \examples{
 \dontrun{
 HW8_1()
+HW8_2_1(mtcars)
+HW8_2_2(mtcars)
+HW8_3_1()
+HW8_3_2()
+HW8_4_1(mtcars, faithful)
+HW8_4_2(mtcars, faithful)
 }
 }

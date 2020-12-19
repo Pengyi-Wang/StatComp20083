@@ -1,10 +1,6 @@
 #' @title Benchmark6 R and Rcpp functions.
 #' @name benchmarks6
 #' @description The functions used in homework 6
-#' @import boot RANN energy Ball
-#' @importFrom Rcpp evalCpp
-#' @importFrom stats rnorm runif
-#' @useDynLib StatComp20083
 #' @examples
 #' \dontrun{
 #' HW6_1()

@@ -1,9 +1,6 @@
 #' @title Benchmark2 R and Rcpp functions.
 #' @name benchmarks2
 #' @description The functions used in homework 2
-#' @importFrom Rcpp evalCpp
-#' @importFrom stats runif
-#' @useDynLib StatComp20083
 #' @examples
 #' \dontrun{
 #' HW2_1()

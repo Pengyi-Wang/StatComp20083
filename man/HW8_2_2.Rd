@@ -4,7 +4,10 @@
 \alias{HW8_2_2}
 \title{the question 2.2 of homework(lapply())}
 \usage{
-HW8_2_2()
+HW8_2_2(mtcars)
+}
+\arguments{
+\item{mtcars}{a data frame (use datasets mtcars)}
 }
 \description{
 the question 2.2 of homework(lapply())

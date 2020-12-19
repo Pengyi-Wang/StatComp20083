@@ -4,7 +4,10 @@
 \alias{HW8_2_1}
 \title{the question 2.1 of homework(for())}
 \usage{
-HW8_2_1()
+HW8_2_1(mtcars)
+}
+\arguments{
+\item{mtcars}{a data frame (use datasets mtcars)}
 }
 \description{
 the question 2.1 of homework(for())

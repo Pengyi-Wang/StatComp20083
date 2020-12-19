@@ -4,20 +4,18 @@
 \alias{HW8_4_1}
 \title{the question 4.1 of homework}
 \usage{
-HW8_4_1()
+HW8_4_1(mtcars, faithful)
+}
+\arguments{
+\item{mtcars}{a data frame (use datasets mtcars)}
 
-HW8_4_1()
+\item{faithful}{a data frame (use datasets faithful)}
 }
 \description{
 the question 4.1 of homework
-
-the question 4.2 of homework
 }
 \examples{
 \dontrun{
 HW8_4_1()
-}
-\dontrun{
-HW8_4_2()
 }
 }

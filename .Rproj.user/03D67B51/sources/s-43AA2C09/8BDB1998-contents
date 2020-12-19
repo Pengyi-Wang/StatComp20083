@@ -1,0 +1,27 @@
+CVx=function(X,Y)
+{
+	n=nrow(X)
+	mNW=function(x,h,y,x1)
+	{
+		n1=length(x)
+		f1=0
+		f2=0
+		for(i in 1:n1){f1=f1+Kernel((x1-x[i])/h)*y[i]}
+		for(i in 1:n1){f2=f2+Kernel((x1-x[i])/h)}
+		return(f1/f2)
+	}
+	CVH=function(x,h,y)
+	{
+		f3=0
+		n2=length(x)
+		for(i in 1:n2){f3=f3+(y[i]-mNW(x[-i],h,y[-i],x[i]))^2}
+		return(f3)
+	}
+	# h1=seq(0.1,5,0.1)
+	y=rep(1,length(h1))
+	for(j in 1:length(h1)){y[j]=CVH(X,h1[j],Y);if(is.na(y[j])){y[j]=9999999}}	
+	plot(h1,y)
+	place=which(y==min(y))
+	h=h1[place]
+	return(h)
+}

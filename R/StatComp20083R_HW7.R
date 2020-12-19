@@ -1,9 +1,7 @@
 #' @title Benchmark7 R and Rcpp functions.
 #' @name benchmarks7
 #' @description The functions used in homework 7
-#' @importFrom Rcpp evalCpp
-#' @importFrom stats rnorm runif
-#' @useDynLib StatComp20083
+#' @importFrom graphics par abline lines abline
 #' @examples
 #' \dontrun{
 #' HW7_1()

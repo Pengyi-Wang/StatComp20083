@@ -1,29 +1,27 @@
 #' @title Benchmark5 R and Rcpp functions.
 #' @name benchmarks5
 #' @description The functions used in homework 5
-#' @import bootstrap DAAG
-#' @importFrom Rcpp evalCpp
-#' @useDynLib StatComp20083
 #' @examples
 #' \dontrun{
-#' HW5_1()
+#' HW5_1(law)
 #' HW5_2_1()
 #' HW5_2_2()
 #' HW5_2_3()
 #' HW5_2_4()
-#' HW5_3()
-#' HW5_4()
+#' HW5_3(scor)
+#' HW5_4(ironslag)
 #' }
 NULL
 
 #' @title the question 1 of homework
+#' @param law a data frame (use bootstrap law)
 #' @return two number about bias.jack and se.jack
 #' @examples
 #' \dontrun{
-#' HW5_1()
+#' HW5_1(law)
 #' }
 #' @export
-HW5_1=function(){
+HW5_1=function(law){
   n=length(law$LSAT)
   x=matrix(0,nrow=2,ncol=n)
   x[1,]=law$LSAT;x[2,]=law$GPA;
@@ -130,13 +128,14 @@ HW5_2_4=function(){
 }
 
 #' @title the question 3 of homework
+#' @param scor a data frame (use bootstrap scor)
 #' @return some number
 #' @examples
 #' \dontrun{
-#' HW5_3()
+#' HW5_3(scor)
 #' }
 #' @export
-HW5_3=function(){
+HW5_3=function(scor){
   score=scor
   n=length(score[,1])
   covmatrix1=covmatrix=matrix(0,nrow=5,ncol=5)
@@ -156,13 +155,14 @@ HW5_3=function(){
 }
 
 #' @title the question 4 of homework
+#' @param ironslag a data frame (use DAAG ironslag)
 #' @return some number
 #' @examples
 #' \dontrun{
 #' HW5_4()
 #' }
 #' @export
-HW5_4=function(){
+HW5_4=function(ironslag){
   magnetic=ironslag$magnetic
   chemical=ironslag$chemical
   n=length(magnetic)

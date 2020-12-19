@@ -1,0 +1,50 @@
+GnS=function(x)    # x=(Y,U,V)
+{
+	n=nrow(x)
+	H=1:n
+	h1=1:n
+	h2=1:n
+	F=1:n
+	f=1:n
+	I=function(t)
+	{
+		if(t[2]<=t[1]&t[1]<=t[3]){return(1)}
+		else {return(0)}
+	}
+	for(i in 1:n){h1[i]=1/n}
+	for(i in 1:n)
+	{
+		H[i]=0
+		for(j in 1:n){H[i]=H[i]+h1[j]*I(c(x[j,1],x[i,2],x[i,3]))}
+	}
+	while(abs(max(h1-h2))>=10^(-6))
+	{
+		h2=h1
+		for(j in 1:n)
+		{
+			f[j]=0
+			for(i in 1:n){f[j]=f[j]+1/H[i]}
+			f[j]=(1/f[j])*(1/H[j])
+		}
+		for(i in 1:n)
+		{
+			F[i]=0
+			for(j in 1:n){F[i]=F[i]+f[j]*I(c(x[i,1],x[j,2],x[j,3]))}
+		}
+		for(j in 1:n)
+		{
+			h1[j]=0
+			for(i in 1:n){h1[j]=h1[j]+1/F[i]}
+			h1[j]=(1/h1[j])*(1/F[j])
+		}
+		for(i in 1:n)
+		{
+			H[i]=0
+			for(j in 1:n){H[i]=H[i]+h1[j]*I(c(x[j,1],x[i,2],x[i,3]))}
+		}
+	}
+	return(f)
+}
+
+
+		

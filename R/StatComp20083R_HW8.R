@@ -1,13 +1,15 @@
 #' @title Benchmark8 R and Rcpp functions.
 #' @name benchmarks8
 #' @description The functions used in homework 7
-#' @import stats4 DAAG
-#' @importFrom Rcpp evalCpp
-#' @importFrom stats rnorm runif
-#' @useDynLib StatComp20083
 #' @examples
 #' \dontrun{
 #' HW8_1()
+#' HW8_2_1(mtcars)
+#' HW8_2_2(mtcars)
+#' HW8_3_1()
+#' HW8_3_2()
+#' HW8_4_1(mtcars, faithful)
+#' HW8_4_2(mtcars, faithful)
 #' }
 NULL
 
@@ -40,12 +42,13 @@ HW8_1=function(){
 }
 
 #' @title the question 2.1 of homework(for())
+#' @param mtcars a data frame (use datasets mtcars)
 #' @examples
 #' \dontrun{
 #' HW8_2_1()
 #' }
 #' @export
-HW8_2_1=function(){
+HW8_2_1=function(mtcars){
   formulas <- list(
     mpg ~ disp,
     mpg ~ I(1/disp),
@@ -63,12 +66,22 @@ HW8_2_1=function(){
 }
 
 #' @title the question 2.2 of homework(lapply())
+#' @param mtcars a data frame (use datasets mtcars)
 #' @examples
 #' \dontrun{
 #' HW8_2_2()
 #' }
 #' @export
-HW8_2_2=function(){
+HW8_2_2=function(mtcars){
+  formulas <- list(
+    mpg ~ disp,
+    mpg ~ I(1/disp),
+    mpg ~ disp+wt,
+    mpg ~ I(1/disp)+wt
+  )
+  mpg=mtcars$mpg
+  disp=mtcars$disp
+  wt=mtcars$wt
   f=function(x){
     return(as.numeric(lm(x)$coefficients))
   }
@@ -108,25 +121,30 @@ HW8_3_2=function(){
 }
 
 #' @title the question 4.1 of homework
+#' @param mtcars a data frame (use datasets mtcars)
+#' @param faithful a data frame (use datasets faithful)
 #' @examples
 #' \dontrun{
 #' HW8_4_1()
 #' }
 #' @export
-HW8_4_1=function(){
-  datalist <- list(mtcars, faithful)
+HW8_4_1=function(mtcars, faithful){
+  datalist=list(mtcars, faithful)
   lapply(datalist, function(x) vapply(x, mean, numeric(1)))
 }
 
 #' @title the question 4.2 of homework
+#' @param mtcars a data frame (use datasets mtcars)
+#' @param faithful a data frame (use datasets faithful)
 #' @examples
 #' \dontrun{
 #' HW8_4_2()
 #' }
 #' @export
-HW8_4_1=function(){
-  mylapply <- function(X, FUN, FUN.VALUE, simplify = FALSE){
-    out <- Map(function(x) vapply(x, FUN, FUN.VALUE), X)
+HW8_4_2=function(mtcars, faithful){
+  datalist=list(mtcars, faithful)
+  mylapply=function(X, FUN, FUN.VALUE, simplify = FALSE){
+    out=Map(function(x) vapply(x, FUN, FUN.VALUE), X)
     if(simplify == TRUE) return(simplify2array(out))
     unlist(out)
   }

@@ -8,12 +8,12 @@ The functions used in homework 5
 }
 \examples{
 \dontrun{
-HW5_1()
+HW5_1(law)
 HW5_2_1()
 HW5_2_2()
 HW5_2_3()
 HW5_2_4()
-HW5_3()
-HW5_4()
+HW5_3(scor)
+HW5_4(ironslag)
 }
 }

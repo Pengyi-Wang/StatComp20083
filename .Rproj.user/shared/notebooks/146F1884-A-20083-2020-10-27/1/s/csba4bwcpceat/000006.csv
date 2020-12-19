@@ -1,0 +1,2 @@
+"0","se <- sqrt(result*(1-result)/m)"
+"0","lines(epsilon, result+se, lty = 3)"

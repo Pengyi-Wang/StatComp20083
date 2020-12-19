@@ -4,7 +4,10 @@
 \alias{HW5_3}
 \title{the question 3 of homework}
 \usage{
-HW5_3()
+HW5_3(scor)
+}
+\arguments{
+\item{scor}{a data frame (use bootstrap scor)}
 }
 \value{
 some number
@@ -14,6 +17,6 @@ the question 3 of homework
 }
 \examples{
 \dontrun{
-HW5_3()
+HW5_3(scor)
 }
 }

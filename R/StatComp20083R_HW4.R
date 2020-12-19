@@ -2,8 +2,6 @@
 #' @name benchmarks4
 #' @description The functions used in homework 4
 #' @importFrom Rcpp evalCpp 
-#' @importFrom stats rnorm runif qnorm rbeta rt
-#' @useDynLib StatComp20083
 #' @examples
 #' \dontrun{
 #' HW4_1_1()

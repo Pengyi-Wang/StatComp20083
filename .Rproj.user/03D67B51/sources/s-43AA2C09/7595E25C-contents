@@ -1,0 +1,34 @@
+mNW=function(x,h,y,x1)
+{
+	n1=nrow(x)
+	f1=0
+	f2=0
+	for(i in 1:n1){f1=f1+Kernel(d(x1,x[i,])/h)*y[i]/Gn(y[i])}
+	for(i in 1:n1){f2=f2+Kernel(d(x1,x[i,])/h)/Gn(y[i])}
+	return(f1/f2)
+}
+n1=100
+m=5
+max=1
+min=0
+Xnow=matrix(-1,nrow=n1,ncol=m)
+Ynow=rep(-1,n1);YNW=rep(-1,n1)
+for(j in 1:n1){
+	Xnow[j,]=runif(m,min=min,max=max)
+	gt=function(x){Xnow[j,1]+Xnow[j,2]*x+Xnow[j,3]*x^2+Xnow[j,4]*x^3+Xnow[j,5]*x^4}
+	Ynow[j]=as.numeric(integrate(gt,0,1)[1])
+	YNW[j]=mNW(X,h,Y,Xnow[j,])
+}
+Xp=matrix(-1,nrow=11,ncol=m)
+Yp=rep(-1,11);YNWp=Yp;
+number=seq(0,1,0.1)
+for(j in 1:11){
+	Xp[j,]=rep(number[j],m)
+	gt=function(x){Xp[j,1]+Xp[j,2]*x+Xp[j,3]*x^2+Xp[j,4]*x^3+Xp[j,5]*x^4}
+	Yp[j]=as.numeric(integrate(gt,0,1)[1])
+	YNWp[j]=mNW(X,h,Y,Xnow[j,])
+}
+sum((Ynow-YNW)^2)
+quantile(abs(Ynow-YNW),probs=c(0.25,0.5,0.75))
+mean(abs(Ynow-YNW))
+abs(Yp-YNWp)

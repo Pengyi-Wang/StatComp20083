@@ -1,0 +1,15 @@
+Kernel=function(x)
+{
+	h=1/sqrt(2*3.14159)*exp(-x^2/2)
+	return(h)
+}
+D1Kernel=function(x)
+{
+	h=1/sqrt(2*3.14159)*exp(-x^2/2)*(-x)
+	return(h)
+}
+D2Kernel=function(x)
+{
+	h=1/sqrt(2*3.14159)*exp(-x^2/2)*(x^2-1)
+	return(h)
+}

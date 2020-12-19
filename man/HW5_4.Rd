@@ -4,7 +4,10 @@
 \alias{HW5_4}
 \title{the question 4 of homework}
 \usage{
-HW5_4()
+HW5_4(ironslag)
+}
+\arguments{
+\item{ironslag}{a data frame (use DAAG ironslag)}
 }
 \value{
 some number
