@@ -3,13 +3,16 @@
     "path": "E:/Rpack/StatComp20083/doc/intro_my_function.html",
     "project_path": "doc/intro_my_function.html",
     "type": "html",
-    "hash": "285613606",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1608364209937.0,
     "source_on_save": false,
     "relative_order": 15,
-    "properties": {},
+    "properties": {
+        "cursorPosition": "21,0",
+        "scrollLine": "0"
+    },
     "folds": "",
     "lastKnownWriteTime": 1608363955,
     "encoding": "UTF-8",
