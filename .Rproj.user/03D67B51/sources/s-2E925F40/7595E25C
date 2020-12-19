@@ -1,24 +1,24 @@
 {
-    "id": "750D02E4",
-    "path": "F:/本科材料/论文要用的R脚本/生成数据.R",
+    "id": "7595E25C",
+    "path": "F:/本科材料/论文要用的R脚本/进行函数型变量的拟合结果分析.R",
     "project_path": null,
     "type": "r_source",
-    "hash": "4129926410",
+    "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1608356477805.0,
+    "created": 1608354639484.0,
     "source_on_save": false,
-    "relative_order": 11,
+    "relative_order": 8,
     "properties": {
-        "cursorPosition": "11,37",
-        "scrollLine": "4"
+        "cursorPosition": "8,1",
+        "scrollLine": "0"
     },
     "folds": "",
     "lastKnownWriteTime": 1608359680,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1608359680558,
+    "last_content_update": 1608359680599,
     "read_only": false,
     "read_only_alternatives": []
 }
